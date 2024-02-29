@@ -1,0 +1,38 @@
+<div class="card">
+    <div class="card-body" style="flex: none !important;">
+        <h3>Teste Platinum - {{ appComponent.title }}</h3>
+        <div class="col-12 d-inline-flex justify-content-between">
+            <div class="form-group col-6">
+                <label for="inputNumber">Valor para multiplicar</label>
+                <input type="text" class="form-control" id="inputNumber" placeholder="Insira um número" min="0"
+                    [(ngModel)]='valor' />
+            </div>
+            <div class="align-self-end">
+                <button type="button" class="btn btn-primary" (click)="inserirLista(valor)">Inserir</button>
+            </div>
+        </div>
+
+        <div class="col-12 pt-3">
+            <h6>Lista de números á serem multiplicados</h6>
+            <div class="col-12">
+                <p *ngFor="let item of listaNumeros; index as i">
+                    {{item}}
+                </p>
+            </div>
+            
+        </div>
+    </div>
+    <div class="col-12 d-inline-flex" style="align-self: flex-end;">
+        <div class="col-12 text-center">
+            <button type="button" class="btn btn-primary" (click)="enviar()">Enviar</button>
+        </div>
+    </div>
+    
+    <div class="card-body" style="flex: none !important;">
+        <div class="col-12 pt-3" style="display: grid; max-height: 287px; overflow: auto">
+            <span class="col-12" *ngFor="let item of tabuadas">
+                {{item}}
+            </span>
+        </div>
+    </div>
+</div>
